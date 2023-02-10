@@ -3,6 +3,7 @@
 import './App.css'
 import { useState, useEffect } from "react";
 import axios from "axios";
+import AddTodo from './AddTodo';
 
 function App() {
 	const [todoList, setTodoList] = useState([])
@@ -21,14 +22,7 @@ function App() {
 	return(
 		<div className = "App">
       <div>
-        <p> {todoList.map((todo) => {
-          return(
-            <div  style={{color: todo.completed ? 'green' : 'red', borderRadius: '1px'}}>
-              <p> {todo.title}</p>
-              <p> {todo.description}</p>
-            </div>
-          )
-        })} </p>
+        <AddTodo todoList = {todoList}/>
       </div>
 		</div>
 	)
